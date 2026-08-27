@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="QR Studio is a clean, privacy-first QR code generator that runs entirely in your browser." />
+  <title>QR Studio — Privacy-first QR Code Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="QR Studio home">
+        <span class="brand-mark">Q</span>
+        <span>QR Studio</span>
+      </a>
+      <a class="github-link" href="https://github.com/" target="_blank" rel="noreferrer">View on GitHub</a>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">PRIVATE • FAST • CLIENT-SIDE</p>
+      <h1>Create polished QR codes in seconds.</h1>
+      <p class="hero-copy">Generate, customise and export QR codes directly in your browser. Nothing you enter is sent to a server.</p>
+    </section>
+
+    <section class="app-grid">
+      <div class="panel controls-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-label">CONTENT</p>
+            <h2>QR settings</h2>
+          </div>
+          <button id="resetBtn" class="text-button" type="button">Reset</button>
+        </div>
+
+        <label class="field">
+          <span>URL or text</span>
+          <textarea id="qrText" rows="5" placeholder="https://example.com">https://www.eventbrite.com</textarea>
+          <small id="charCount">26 characters</small>
+        </label>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>Size</span>
+            <select id="sizeSelect">
+              <option value="512">512 × 512</option>
+              <option value="768" selected>768 × 768</option>
+              <option value="1024">1024 × 1024</option>
+              <option value="1536">1536 × 1536</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Error correction</span>
+            <select id="errorSelect">
+              <option value="L">Low (7%)</option>
+              <option value="M" selected>Medium (15%)</option>
+              <option value="Q">Quartile (25%)</option>
+              <option value="H">High (30%)</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>Foreground</span>
+            <div class="color-control">
+              <input id="darkColor" type="color" value="#111111" />
+              <input id="darkHex" type="text" value="#111111" maxlength="7" aria-label="Foreground hex colour" />
+            </div>
+          </label>
+          <label class="field">
+            <span>Background</span>
+            <div class="color-control">
+              <input id="lightColor" type="color" value="#ffffff" />
+              <input id="lightHex" type="text" value="#ffffff" maxlength="7" aria-label="Background hex colour" />
+            </div>
+          </label>
+        </div>
+
+        <label class="field">
+          <div class="range-header"><span>Quiet zone</span><strong id="marginValue">4</strong></div>
+          <input id="marginRange" type="range" min="0" max="12" value="4" />
+        </label>
+
+        <div class="privacy-note">
+          <span class="privacy-icon">✓</span>
+          <div>
+            <strong>Privacy-first</strong>
+            <p>Your content is processed locally in the browser and is never uploaded.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel preview-panel">
+        <div class="panel-heading preview-heading">
+          <div>
+            <p class="section-label">PREVIEW</p>
+            <h2>Your QR code</h2>
+          </div>
+          <span id="statusPill" class="status-pill">Ready</span>
+        </div>
+        <div class="qr-stage"><div id="qrCode" class="qr-code" aria-label="Generated QR code"></div></div>
+        <div class="preview-actions">
+          <button id="downloadBtn" class="primary-button" type="button">Download PNG</button>
+          <button id="copyBtn" class="secondary-button" type="button">Copy text</button>
+        </div>
+        <p class="download-note">Exports a high-resolution PNG suitable for print and digital use.</p>
+      </div>
+    </section>
+
+    <section class="feature-strip">
+      <div><strong>Browser-based</strong><span>No installation required.</span></div>
+      <div><strong>Customisable</strong><span>Control colours, size and error correction.</span></div>
+      <div><strong>Export-ready</strong><span>Download clean, high-resolution PNG files.</span></div>
+    </section>
+
+    <footer>
+      <p>Built as a lightweight front-end portfolio project.</p>
+      <p>QR Studio does not store or transmit generated content.</p>
+    </footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
