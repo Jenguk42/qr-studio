@@ -1,5 +1,6 @@
 # QR Studio
 
+https://jenguk42.github.io/qr-studio/
 A lightweight, privacy-first QR code generator built as a front-end portfolio project.
 
 ## Features
@@ -21,23 +22,6 @@ QR Studio runs entirely in the browser. The content entered into the generator i
 - Vanilla JavaScript
 - `qrcode` via jsDelivr CDN
 - GitHub Pages compatible
-
-## Deploy with GitHub Pages
-1. Create a repository such as `qr-studio`.
-2. Upload the project files to the repository root.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, select **Deploy from a branch**.
-5. Choose `main` and `/ (root)`.
-6. Save.
-
-Your site will be published at a URL similar to:
-
-`https://your-username.github.io/qr-studio/`
-
-## Portfolio description
-**QR Studio — Client-side QR Code Generator**
-
-A responsive front-end web application for generating and exporting custom QR codes directly in the browser. Designed with a privacy-first approach, all content is processed locally without server-side storage or transmission.
 
 ## Future improvements
 - SVG export
